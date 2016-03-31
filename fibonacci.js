@@ -21,18 +21,19 @@ function fibonacciWithLoop(number) {
 
   var onebehind=0;
   var twobehind=1;
-  var sum = 0;
+  var sum;
 
-  for (var i = 2; i < number; i++) {
-    sum += onebehind+twobehind;
+  for (var i = 2; i <= number; i++) {
     if (i === 2) {
       twobehind = 0;
       onebehind = 1;
     }
     else {
-      twobehind = onebehind;
-      onebehind = number;
     }
+    sum = onebehind+twobehind;
+    twobehind = onebehind;
+    onebehind = sum;
+
   }
   return sum;
 }
@@ -53,7 +54,7 @@ function fibbWithArray(input) {
 // Testing
 arrayFibNums = [0,1,2,3,4,5,6,7,8,9,10];
 arrayFibNums.forEach(function(element) {
-  console.log('element: ', element, 'fibonacci number: ', fibonacci(element));
+  console.log('element: ', element, 'fibonacci number: ', fibonacciWithLoop(element));
 
 })
 console.log('70 fib with loop', fibonacciWithLoop(70));
