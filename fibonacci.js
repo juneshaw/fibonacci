@@ -19,8 +19,8 @@ function fibonacciWithLoop(number) {
     return number;
   }
 
-  var onebehind=0;
-  var twobehind=1;
+  var onebehind;
+  var twobehind;
   var sum;
 
   for (var i = 2; i <= number; i++) {
@@ -28,8 +28,7 @@ function fibonacciWithLoop(number) {
       twobehind = 0;
       onebehind = 1;
     }
-    else {
-    }
+
     sum = onebehind+twobehind;
     twobehind = onebehind;
     onebehind = sum;
